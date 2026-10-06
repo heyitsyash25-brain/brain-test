@@ -1,0 +1,270 @@
+/* Quinfosys™ Quantum Brain — Theme & Design System Stylesheet */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  --bg-dark-0: #040404;
+  --bg-dark-1: #060606;
+  --bg-dark-2: #080808;
+  --bg-dark-3: #0e0e0e;
+  --bg-dark-4: #141414;
+  --bg-card: rgba(12, 12, 12, 0.8);
+  --bg-card-elevated: rgba(18, 18, 18, 0.9);
+  
+  --border-subtle: rgba(255, 255, 255, 0.07);
+  --border-medium: rgba(255, 255, 255, 0.12);
+  --border-highlight: rgba(255, 255, 255, 0.24);
+  
+  --text-primary: #fbfbfb;
+  --text-secondary: #c9cdd4;
+  --text-muted: #8e95a2;
+  --text-dim: #5a606d;
+
+  --accent-white: #ffffff;
+  --accent-cyan: #38bdf8;
+  --accent-indigo: #818cf8;
+  --accent-violet: #a855f7;
+  --accent-emerald: #34d399;
+  
+  --glow-shadow: 0 0 50px rgba(255, 255, 255, 0.08);
+  --glow-pill: 0 0 24px rgba(255, 255, 255, 0.22);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  background-color: var(--bg-dark-1);
+}
+
+html.lenis {
+  scroll-behavior: auto;
+}
+
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--bg-dark-1);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, .font-heading {
+  font-family: 'Manrope', 'Inter', sans-serif;
+  color: var(--text-primary);
+  letter-spacing: -0.035em;
+  font-weight: 700;
+}
+
+code, pre, .font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-track {
+  background: #080808;
+}
+::-webkit-scrollbar-thumb {
+  background: #222222;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #333333;
+}
+
+/* Quinfosys Signature Gradients & Glows */
+.bg-quinfosys-radial {
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(255, 255, 255, 0.12), transparent 45%),
+    radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.04), transparent 40%),
+    radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.03), transparent 40%);
+}
+
+.bg-hero-glow {
+  background-image:
+    radial-gradient(circle at 50% -10%, rgba(255, 255, 255, 0.16) 0%, rgba(14, 14, 14, 0) 55%),
+    radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.04) 0%, transparent 30%),
+    radial-gradient(circle at 82% 14%, rgba(255, 255, 255, 0.03) 0%, transparent 32%),
+    linear-gradient(180deg, #050505 0%, #080808 55%, #050505 100%);
+}
+
+.bg-card-glass {
+  background: rgba(14, 14, 14, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.bg-card-glass:hover {
+  background: rgba(22, 22, 22, 0.85);
+  border-color: rgba(255, 255, 255, 0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
+}
+
+.glow-btn-primary {
+  background: #ffffff;
+  color: #050505;
+  font-weight: 600;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+
+.glow-btn-primary:hover {
+  background: #f4f4f5;
+  box-shadow: 0 0 35px rgba(255, 255, 255, 0.35);
+  transform: scale(1.02);
+}
+
+.glow-btn-primary:active {
+  transform: scale(0.98);
+}
+
+.glow-btn-secondary {
+  background: rgba(255, 255, 255, 0.04);
+  color: #f3f4f6;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(8px);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glow-btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.09);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #ffffff;
+  transform: scale(1.01);
+}
+
+.glow-btn-secondary:active {
+  transform: scale(0.98);
+}
+
+/* Badge styles */
+.badge-pill {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #d1d5db;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Interactive animations */
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50% { opacity: 0.65; transform: scale(1.04); }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-spin-slow {
+  animation: spinSlow 30s linear infinite;
+}
+
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+
+.animate-float {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+/* Quantum Circuit Wire and Gate Styles */
+.circuit-wire {
+  stroke: rgba(255, 255, 255, 0.25);
+  stroke-width: 2;
+}
+
+.circuit-gate {
+  cursor: pointer;
+  transition: all 0.18s ease;
+}
+.circuit-gate:hover {
+  filter: brightness(1.2);
+}
+
+/* Knowledge Graph SVG Styles */
+.graph-edge {
+  stroke: rgba(255, 255, 255, 0.18);
+  stroke-width: 1.5;
+  transition: stroke 0.2s;
+}
+
+.graph-edge.active {
+  stroke: #38bdf8;
+  stroke-width: 2.5;
+}
+
+.graph-node {
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.graph-node:hover circle {
+  stroke: #ffffff;
+  stroke-width: 3;
+}
+
+/* Active tab indicators */
+.tab-active {
+  background: rgba(56, 189, 248, 0.2) !important;
+  color: #38bdf8 !important;
+  border-color: rgba(56, 189, 248, 0.5) !important;
+  font-weight: 600 !important;
+}
+
+/* Modal backdrop blur */
+.modal-backdrop {
+  background: rgba(4, 4, 4, 0.82);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Step pipeline dots */
+.pipeline-step::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -24px;
+  width: 24px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.15);
+}
+.pipeline-step:last-child::after {
+  display: none;
+}

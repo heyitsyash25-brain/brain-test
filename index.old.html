@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quinfosys™ Quantum AI</title>
+  <meta name="description" content="Quinfosys™ Quantum AI
+   combines Artificial Intelligence, Quantum Computing, Knowledge, Reasoning and Research into an integrated intelligence platform.">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brandDark: {
+              0: '#040404',
+              1: '#060606',
+              2: '#080808',
+              3: '#0e0e0e',
+              4: '#141414',
+            }
+          },
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            heading: ['Manrope', 'Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- FontAwesome Icons for footer and enterprise branding -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Quinfosys Custom Theme Styles -->
+  <link rel="stylesheet" href="css/theme.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="bg-[#060606] text-zinc-300 min-h-screen selection:bg-white selection:text-black flex flex-col font-sans">
+
+  <!-- Header / Navigation Bar -->
+  <header class="sticky top-0 z-50 backdrop-blur-xl bg-white border-b border-black/10 shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Left side: Back Button & Brand Logo -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Top Left Back Arrow Button (←) to navigate to previous page -->
+        <button id="btn-top-back" class="hidden p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white border border-white/10 transition-all items-center justify-center group" title="Back to previous page" aria-label="Go to previous page">
+          <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+
+        <!-- Brand Logo -->
+        <a href="https://quinfosys.com/" class="flex items-center gap-3 cursor-pointer brand-logo-btn" aria-label="Visit Quinfosys website">
+          <img src="quinfosys-logo-transparent.png" alt="Quinfosys" class="h-9 w-auto object-contain" style="filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));">
+            <div class="hidden sm:flex flex-col">
+            <div class="flex items-center gap-1.5">
+              <span class="text-sm sm:text-base font-bold text-zinc-950 tracking-tight font-heading"></span>
+              <span class="text-xs sm:text-sm font-medium text-zinc-500 font-heading"></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center Desktop Navigation Links -->
+      <nav class="hidden md:flex flex-nowrap items-center gap-3 text-xs sm:text-sm font-medium text-zinc-600">
+        <a href="#features" class="nav-link hover:text-zinc-950 transition-colors">Quantum AI</a>
+
+        <div class="relative group">
+          <button type="button" class="flex items-center gap-1 hover:text-zinc-950 transition-colors focus:outline-none">
+            <span>Developers</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="absolute left-0 top-full mt-3 w-56 rounded-xl border border-zinc-200 bg-white p-2 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50">
+            <a href="#" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Quantum AI Code</a>
+            <a href="#" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Quantum AI
+               Platform</a>
+            <a href="#solutions" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Scientific Work</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button type="button" class="flex items-center gap-1 hover:text-zinc-950 transition-colors focus:outline-none">
+            <span>Enterprise</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="absolute left-0 top-full mt-3 w-56 rounded-xl border border-zinc-200 bg-white p-2 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50">
+            <a href="#target-users" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Target Users</a>
+            <a href="#enterprise" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Enterprise Solutions</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <a href="#use-cases" class="flex items-center gap-1 hover:text-zinc-950 transition-colors focus:outline-none">
+            <span>Resources</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="absolute left-0 top-full mt-3 w-52 rounded-xl border border-zinc-200 bg-white p-2 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50">
+            
+            <a href="#use-cases" class="nav-link block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Use Cases</a>
+            <a href="#use-cases" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Docs</a>
+            <a href="#use-cases" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Papers</a>
+            <a href="#" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">APIs</a>
+          </div>
+        </div>
+
+        <a href="#pricing" class="nav-link hover:text-zinc-950 transition-colors">Pricing</a>
+      </nav>
+
+      <!-- Right Action CTAs: Injected dynamically by app.js (Sign Up, Sign In, Get Started) -->
+      <div class="hidden md:flex shrink-0 items-center gap-3" id="nav-actions">
+        <!-- Injected dynamically by app.js -->
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-lg text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100" aria-label="Toggle navigation menu">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-nav" class="hidden md:hidden border-t border-black/10 bg-white px-4 py-4 space-y-3">
+      <a href="#features" class="block text-sm text-zinc-700 hover:text-zinc-950 mobile-nav-link">Quantum AI</a>
+
+      <details class="group">
+        <summary class="list-none flex cursor-pointer items-center justify-between text-sm text-zinc-700 hover:text-zinc-950">Developers <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="mt-2 ml-3 space-y-2 border-l border-zinc-200 pl-3">
+          <a href="#" class="block text-sm text-zinc-600 hover:text-zinc-950">Quantum AI Code</a>
+          <a href="#" class="block text-sm text-zinc-600 hover:text-zinc-950">Quantum AI Platform</a>
+          <a href="#solutions" class="block text-sm text-zinc-600 hover:text-zinc-950">Scientific Work</a>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="list-none flex cursor-pointer items-center justify-between text-sm text-zinc-700 hover:text-zinc-950">Enterprise <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="mt-2 ml-3 space-y-2 border-l border-zinc-200 pl-3">
+          <a href="#target-users" class="block text-sm text-zinc-600 hover:text-zinc-950">Target Users</a>
+          <a href="#enterprise" class="block text-sm text-zinc-600 hover:text-zinc-950">Enterprise Solutions</a>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="list-none flex cursor-pointer items-center justify-between text-sm text-zinc-700 hover:text-zinc-950">Resources <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="mt-2 ml-3 space-y-2 border-l border-zinc-200 pl-3">
+          
+          <a href="#use-cases" class="block text-sm text-zinc-600 hover:text-zinc-950">Use Cases</a>
+          <a href="#use-cases" class="block text-sm text-zinc-600 hover:text-zinc-950">Docs</a>
+          <a href="#use-cases" class="block text-sm text-zinc-600 hover:text-zinc-950">Papers</a>
+          <a href="#" class="block text-sm text-zinc-600 hover:text-zinc-950">APIs</a>
+        </div>
+      </details>
+
+      <a href="#pricing" class="block text-sm text-zinc-700 hover:text-zinc-950 mobile-nav-link">Pricing</a>
+      <div id="mobile-nav-actions" class="pt-3 border-t border-black/10">
+        <div class="flex items-center gap-3">
+          <a href="signin.html" class="flex-1 text-center py-2 text-xs font-semibold text-zinc-700 bg-zinc-100 rounded-lg">Sign In</a>
+        </div>
+        <button id="btn-mobile-getstarted" class="w-full mt-3 py-2 text-xs font-semibold text-white bg-[#1677d2] rounded-lg">Get Started</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================= -->
+  <!-- PUBLIC WEBSITE PRESENTATION VIEW (PAGES 1-7 OF DOCUMENTATION) -->
+  <!-- ========================================================================= -->
+  <main id="website-view" class="flex-grow">
+    
+    <!-- Hero Section -->
+    <section id="overview" class="relative py-24 sm:py-32 overflow-hidden bg-hero-glow border-b border-white/[0.06]">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-8">
+        <!-- Top High-Tech Pill -->
+        <div class="inline-flex">
+          <span class="badge-pill">
+            <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse"></span>
+            Quantum AI Research &amp; Intelligence Platform
+          </span>
+        </div>
+
+        <!-- Headline & Tagline -->
+        <div class="space-y-4">
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-white tracking-tight font-heading leading-[1.08]">
+            Quantum AI
+          </h1>
+          <p class="text-lg sm:text-2xl font-light text-zinc-300 max-w-3xl mx-auto font-heading tracking-tight">
+            Quantum Intelligence for Research, Reasoning &amp; Discovery
+          </p>
+        </div>
+
+        <!-- Value Proposition Description -->
+        <p class="text-sm sm:text-base text-zinc-400 max-w-2xl mx-auto leading-relaxed">
+          Quantum AI brings together Artificial Intelligence, Quantum Computing, Knowledge, Reasoning and Research into an integrated intelligence platform for exploring complex problems, conducting research and developing new ideas.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <button id="btn-hero-getstarted" class="w-full sm:w-auto glow-btn-primary text-sm font-semibold px-8 py-3.5 rounded-full flex items-center justify-center gap-2">
+            <span>Get Started</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button id="btn-hero-explore" class="w-full sm:w-auto glow-btn-secondary text-sm font-medium px-8 py-3.5 rounded-full flex items-center justify-center gap-2">
+            <span>Explore Quantum AI
+
+            </span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+          </button>
+        </div>
+
+        <!-- Hero Graphic / Interactive Visual Teaser -->
+        
+        
+      </div>
+    </section>
+
+
+    <!-- Features Section (From Page 2-3 of Document) -->
+    <section id="features" class="py-20 bg-[#080808] border-b border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-3">
+          <span class="badge-pill">Features</span>
+          <h2 class="text-3xl sm:text-5xl font-bold text-white font-heading">Quantum AI</h2>
+          <p class="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto">
+            Engineered from first principles to unify advanced artificial intelligence, deep knowledge graph retrieval, and quantum computing.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Feature 1: AI Intelligence -->
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-3">
+            <div class="text-cyan-400 font-mono text-xs">01 INTELLIGENCE</div>
+            <h3 class="text-lg font-bold text-white">AI Intelligence</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Advanced AI capabilities for reasoning, analysis, information synthesis, problem solving and intelligent interaction.
+            </p>
+          </div>
+
+          <!-- Feature 2: Deep Research -->
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-3">
+            <div class="text-cyan-400 font-mono text-xs">02 RESEARCH</div>
+            <h3 class="text-lg font-bold text-white">Deep Research</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Research-oriented workflows for exploring topics, analysing information, connecting sources and developing structured research outputs.
+            </p>
+          </div>
+
+          <!-- Feature 3: Advanced Reasoning -->
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-3">
+            <div class="text-cyan-400 font-mono text-xs">03 REASONING</div>
+            <h3 class="text-lg font-bold text-white">Advanced Reasoning</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Support for complex reasoning, multi-step analysis, technical problem solving and structured decision workflows.
+            </p>
+          </div>
+
+          <!-- Feature 4: Knowledge Intelligence -->
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-3">
+            <div class="text-cyan-400 font-mono text-xs">04 KNOWLEDGE</div>
+            <h3 class="text-lg font-bold text-white">Knowledge Intelligence</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Connect documents, datasets, sources and knowledge graphs to build contextual intelligence around research and enterprise knowledge.
+            </p>
+          </div>
+
+          <!-- Feature 5: AI Agents -->
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-3">
+            <div class="text-cyan-400 font-mono text-xs">05 AGENTS</div>
+            <h3 class="text-lg font-bold text-white">AI Agents</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Agent-based workflows for research, analysis, automation, information discovery and specialised tasks coordinated by an orchestrator.
+            </p>
+          </div>
+
+          <!-- Feature 6: Quantum Intelligence -->
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-3">
+            <div class="text-cyan-400 font-mono text-xs">06 QUANTUM</div>
+            <h3 class="text-lg font-bold text-white">Quantum Intelligence</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Explore quantum computing concepts, quantum algorithms, quantum simulation, quantum machine learning and quantum optimisation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Use Cases Section (From PDF Page 3) -->
+    <section id="use-cases" class="py-20 bg-[#080808] border-b border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-3">
+          
+          <h2 class="text-3xl sm:text-5xl font-bold text-white font-heading">Use Cases</h2>
+          <p class="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto">
+            From theoretical quantum algorithm formulation to enterprise technical problem-solving.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">Scientific Research</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Scientific literature, analysis, hypothesis exploration and discovery across multidisciplinary repositories.
+            </p>
+          </div>
+
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">Technical Research</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Engineering, technology and complex technical analysis for advanced materials and high-precision systems.
+            </p>
+          </div>
+
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">Quantum Computing</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Quantum algorithms, simulation, experimentation, noise mitigation, and variational circuit formulation.
+            </p>
+          </div>
+
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">AI-Assisted Development</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Programming, computational problem solving, Hamiltonian mapping, and algorithmic pipeline development.
+            </p>
+          </div>
+
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">Knowledge Discovery</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Discover non-obvious relationships, patterns, mathematical mappings, and relevant information across documents.
+            </p>
+          </div>
+
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">Research Intelligence</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">
+              Organise, analyse and synthesise complex research information into verifiable, citation-backed outputs.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solutions Section (From PDF Page 3-4) -->
+    <section id="solutions" class="py-20 bg-[#060606] border-b border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-3">
+          
+          <h2 class="text-3xl sm:text-5xl font-bold text-white font-heading">Scientific Work</h2>
+          <p class="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto">
+            Tailored computational intelligence for scientific institutions, universities, and commercial R&amp;D.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">Enterprise R&amp;D</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Support enterprise research, technical intelligence, knowledge management and AI-assisted problem solving.</p>
+          </div>
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">Research Institutions</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Enable researchers and scientific teams to explore literature, knowledge, computational methods and emerging technologies.</p>
+          </div>
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">Universities</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Support students, faculty and research groups with AI, quantum computing and research workflows.</p>
+          </div>
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">Technology and Engineering</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Apply AI and quantum technologies to complex engineering, technical and computational problems.</p>
+          </div>
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">Pharmaceutical and Healthcare</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Support knowledge-intensive research, scientific analysis and computational exploration across healthcare and drug discovery.</p>
+          </div>
+          <div class="bg-card-glass rounded-2xl p-6 border border-white/10 space-y-2">
+            <h3 class="text-base font-bold text-white">Financial Services</h3>
+            <p class="text-xs text-zinc-400 leading-relaxed">Enable research, analytical workflows, portfolio optimisation exploration and AI-assisted financial intelligence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Built for Individuals and Organisations (PDF Page 5) -->
+    <section id="target-users" class="py-20 bg-[#080808] border-b border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-3">
+          <span class="badge-pill">Target Users</span>
+          <h2 class="text-3xl sm:text-5xl font-bold text-white font-heading">
+            Built for Individuals and Organisations
+          </h2>
+          <p class="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto">
+            From independent quantum enthusiasts to multinational corporate R&amp;D centers.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- For Individuals -->
+          <div class="bg-card-glass rounded-3xl p-8 border border-white/10 space-y-4">
+            <div class="text-cyan-400 font-mono text-xs uppercase font-bold tracking-wider">For Individuals</div>
+            <h3 class="text-xl font-bold text-white">Researchers &amp; Pioneers</h3>
+            <ul class="space-y-2.5 text-xs text-zinc-300">
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Students and learners</li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Researchers and scientists</li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Engineers and developers</li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Quantum technology enthusiasts</li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Independent researchers</li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-cyan-400"></span> Entrepreneurs and innovators</li>
+            </ul>
+          </div>
+
+          <!-- For Organisations -->
+          <div class="bg-card-glass rounded-3xl p-8 border border-white/10 space-y-4">
+            <div class="text-indigo-400 font-mono text-xs uppercase font-bold tracking-wider">For Organisations</div>
+            <h3 class="text-xl font-bold text-white">Institutions &amp; Enterprises</h3>
+            <ul class="space-y-2.5 text-xs text-zinc-300">
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Enterprise R&amp;D teams</li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Research institutions</li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Universities and laboratories</li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Technology companies</li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Pharmaceutical and healthcare organisations</li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Financial institutions</li>
+              <li class="flex items-center gap-2.5"><span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span> Engineering and manufacturing organisations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Enterprise Section (PDF Page 5-6) -->
+    <section id="enterprise" class="py-20 bg-[#060606] border-b border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-card-glass rounded-3xl p-8 sm:p-12 border border-white/10 space-y-8">
+          <div class="max-w-2xl space-y-3">
+            <span class="badge-pill">Enterprise Solutions</span>
+            <h2 class="text-3xl sm:text-4xl font-bold text-white font-heading">
+              Bring AI and quantum intelligence into your organisation’s innovation workflows.
+            </h2>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-xs text-zinc-300">
+            <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+              <div class="font-bold text-white mb-1">Enterprise Research Intelligence</div>
+              <p class="text-zinc-400">Customized fine-tuned reasoning pipelines on dedicated infrastructure.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+              <div class="font-bold text-white mb-1">Private Knowledge Environments</div>
+              <p class="text-zinc-400">Air-gapped data ingestion, proprietary IP protection, and compliance.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+              <div class="font-bold text-white mb-1">AI-Assisted R&amp;D</div>
+              <p class="text-zinc-400">Accelerate molecular screening, material simulation, and patent analysis.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+              <div class="font-bold text-white mb-1">Workflow Automation</div>
+              <p class="text-zinc-400">Multi-agent delegation, autonomous synthesis, and scheduled tasks.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+              <div class="font-bold text-white mb-1">Knowledge Management</div>
+              <p class="text-zinc-400">Centralized graph repository across enterprise silos and teams.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+              <div class="font-bold text-white mb-1">Team Collaboration</div>
+              <p class="text-zinc-400">Shared research projects, review workflows, and versioned hypotheses.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+              <div class="font-bold text-white mb-1">Enterprise Integration</div>
+              <p class="text-zinc-400">REST, GraphQL, Python SDK, and HPC cluster connectors.</p>
+            </div>
+            <div class="p-4 rounded-xl bg-black/40 border border-white/5">
+              <div class="font-bold text-white mb-1">Security &amp; Governance</div>
+              <p class="text-zinc-400">Role-based access control, SOC2 compliance, audit logs, and encryption.</p>
+            </div>
+          </div>
+
+          <div class="pt-2">
+            <button class="glow-btn-primary text-xs font-semibold px-6 py-3 rounded-full" data-action="enterprise-signup">
+              Contact Enterprise
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- Pricing Section (PDF Page 6) -->
+    <section id="pricing" class="py-20 bg-[#060606] border-b border-white/[0.06]">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+        <div class="text-center space-y-3">
+          <span class="badge-pill">Flexible Access</span>
+          <h2 class="text-3xl sm:text-5xl font-bold text-white font-heading">Pricing</h2>
+          <p class="text-xs sm:text-sm text-zinc-400 max-w-2xl mx-auto">
+            Flexible access for individuals, researchers, teams and enterprise organisations.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Tier 1: Individual -->
+          <div class="bg-card-glass rounded-3xl p-8 border border-white/10 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="text-zinc-400 font-mono text-xs uppercase font-bold">Individual</div>
+              <div class="text-3xl font-extrabold text-white">Free</div>
+              <p class="text-xs text-zinc-400">For students, independent researchers, and learners starting with Quantum AI.</p>
+              <ul class="space-y-2 text-xs text-zinc-300 pt-4 border-t border-white/5">
+                <li class="flex items-center gap-2">✓ Personal research workspace</li>
+                <li class="flex items-center gap-2">✓ Core AI capabilities &amp; RAG</li>
+                <li class="flex items-center gap-2">✓ Standard research workflows</li>
+                <li class="flex items-center gap-2">✓ Up to 5 projects</li>
+              </ul>
+            </div>
+            <a href="signup.html" class="w-full glow-btn-secondary text-xs font-semibold py-3 rounded-full text-center">
+              Get Started Free
+            </a>
+          </div>
+
+          <!-- Tier 2: Professional -->
+          <div class="bg-card-glass rounded-3xl p-8 border border-cyan-500/40 relative flex flex-col justify-between space-y-6 shadow-[0_0_50px_rgba(56,189,248,0.1)]">
+            <div class="space-y-4">
+              <div class="flex items-center justify-between">
+                <span class="text-cyan-400 font-mono text-xs uppercase font-bold">Professional</span>
+                <span class="badge-pill !text-[9px] !py-0.5 !text-cyan-300 !border-cyan-500/30">Popular</span>
+              </div>
+              <div class="text-3xl font-extrabold text-white">$49 <span class="text-xs font-normal text-zinc-400">/ mo</span></div>
+              <p class="text-xs text-zinc-400">For advanced scientists, postdocs, and engineering development teams.</p>
+              <ul class="space-y-2 text-xs text-zinc-300 pt-4 border-t border-white/5">
+                <li class="flex items-center gap-2">✓ Advanced research orchestrator</li>
+                <li class="flex items-center gap-2">✓ Quantum simulation capabilities</li>
+                <li class="flex items-center gap-2">✓ Knowledge graph relational explorer</li>
+                <li class="flex items-center gap-2">✓ Autonomous multi-agent cycles</li>
+                <li class="flex items-center gap-2">✓ Unlimited research projects</li>
+              </ul>
+            </div>
+            <a href="signup.html" class="w-full glow-btn-primary text-xs font-semibold py-3 rounded-full text-center">
+              Start 14-Day Trial
+            </a>
+          </div>
+
+          <!-- Tier 3: Enterprise -->
+          <div class="bg-card-glass rounded-3xl p-8 border border-white/10 flex flex-col justify-between space-y-6">
+            <div class="space-y-4">
+              <div class="text-indigo-400 font-mono text-xs uppercase font-bold">Enterprise</div>
+              <div class="text-3xl font-extrabold text-white">Custom</div>
+              <p class="text-xs text-zinc-400">For corporate R&amp;D groups, national laboratories, and universities.</p>
+              <ul class="space-y-2 text-xs text-zinc-300 pt-4 border-t border-white/5">
+                <li class="flex items-center gap-2">✓ Enterprise intelligence platform</li>
+                <li class="flex items-center gap-2">✓ Private knowledge environments</li>
+                <li class="flex items-center gap-2">✓ Full HPC &amp; Quantum API integration</li>
+                <li class="flex items-center gap-2">✓ Dedicated governance &amp; SLA support</li>
+                <li class="flex items-center gap-2">✓ On-premise or sovereign cloud</li>
+              </ul>
+            </div>
+            <button class="w-full glow-btn-secondary text-xs font-semibold py-3 rounded-full" data-action="enterprise-signup">
+              Contact Enterprise
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call to Action Banner (PDF Page 6) -->
+    <section class="py-24 bg-white border-b border-black/[0.08] text-center">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <h2 class="text-4xl sm:text-6xl font-extrabold text-black font-heading">
+          Explore Quantum AI      
+        </h2>
+        <div class="text-base sm:text-xl font-mono text-gray-700 tracking-wider">
+          Research. Reason. Discover. Create.
+        </div>
+        <p class="text-xs sm:text-sm text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          Quinfosys™ Quantum AI provides an integrated environment for AI, Quantum Computing, Knowledge and Research.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
+          <button id="btn-cta-getstarted" class="w-full sm:w-auto bg-black text-white hover:bg-gray-800 text-sm font-semibold px-8 py-3.5 rounded-full flex items-center justify-center gap-2 transition-colors">
+            <span>Get Started</span>
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </button>
+          <button id="btn-cta-demo" class="w-full sm:w-auto bg-white text-black hover:bg-gray-100 border border-black/20 text-sm font-medium px-8 py-3.5 rounded-full flex items-center justify-center gap-2 transition-colors">
+            <span>Request a Demo</span>
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========================================================================= -->
+  <!-- PHASE 2 WEB APPLICATION FOUNDATION VIEW -->
+  <!-- ========================================================================= -->
+  <div id="app-view" class="hidden flex-grow flex flex-col bg-[#050505]">
+    
+    <!-- SUBVIEW A: PROJECTS DASHBOARD -->
+    <section id="dashboard-subview" class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-8 w-full flex-grow">
+      <!-- Dashboard Top Banner -->
+      <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
+        <div>
+          <h2 class="text-2xl sm:text-3xl font-bold text-white font-heading">
+            Research Projects Dashboard
+          </h2>
+          <p class="text-xs text-zinc-400 mt-1">
+            Manage investigation hypotheses, document collections, reasoning traces, and quantum workflows.
+          </p>
+        </div>
+        <button id="btn-open-new-project-modal" class="glow-btn-primary text-xs font-semibold px-4 py-2.5 rounded-xl flex items-center justify-center gap-2 shrink-0">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+          <span>New Research Project</span>
+        </button>
+      </div>
+
+      <!-- Live Dashboard Stats -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-4" id="dashboard-stats">
+        <!-- Injected dynamically by app.js -->
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="space-y-4">
+        <div class="flex items-center justify-between">
+          <h3 class="text-sm font-bold uppercase tracking-wider font-mono text-zinc-400">Current Investigations</h3>
+          <span class="text-xs text-zinc-500 font-mono">Isolated Project Workspaces</span>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="projects-grid">
+          <!-- Injected dynamically by app.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBVIEW B: DEDICATED RESEARCH WORKSPACE -->
+    <section id="workspace-subview" class="hidden flex-grow flex flex-col w-full">
+      <!-- Workspace Header Bar -->
+      <div class="bg-[#080808] border-b border-white/10 px-4 sm:px-8 py-4">
+        <div class="max-w-7xl mx-auto flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+          <div class="flex items-center gap-3">
+            <button id="btn-back-dashboard" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-zinc-400 hover:text-white transition-colors">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+            </button>
+            <div>
+              <div class="flex items-center gap-2">
+                <span class="badge-pill !text-[9.5px] !py-0" id="workspace-project-domain">Scientific Research</span>
+                <span class="text-[11px] font-mono text-cyan-400" id="workspace-project-stage">Analyse Stage</span>
+              </div>
+              <h2 class="text-lg sm:text-xl font-bold text-white font-heading tracking-tight mt-0.5 line-clamp-1" id="workspace-project-title">
+                Research Project Workspace
+              </h2>
+            </div>
+          </div>
+
+          <!-- Quick Action Buttons -->
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-mono text-zinc-500 hidden md:inline">Grounding: 100% Vector Synced</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workspace Sub-Navigation Tabs (7 Core Modules) -->
+      <div class="bg-white border-b border-black/[0.06] overflow-x-auto px-4 sm:px-8">
+        <div class="max-w-7xl mx-auto flex items-center gap-2 py-2.5">
+          <button class="workspace-tab-btn tab-active text-xs font-medium text-zinc-400 hover:text-white px-3.5 py-1.5 rounded-lg border border-transparent whitespace-nowrap transition-colors" data-tab="overview">
+            1. Overview &amp; Roadmap
+          </button>
+          <button class="workspace-tab-btn text-xs font-medium text-zinc-400 hover:text-white px-3.5 py-1.5 rounded-lg border border-transparent whitespace-nowrap transition-colors" data-tab="sources">
+            2. Documents &amp; Sources
+          </button>
+          <button class="workspace-tab-btn text-xs font-medium text-zinc-400 hover:text-white px-3.5 py-1.5 rounded-lg border border-transparent whitespace-nowrap transition-colors" data-tab="rag">
+            3. AI Reasoning &amp; RAG
+          </button>
+          <button class="workspace-tab-btn text-xs font-medium text-zinc-400 hover:text-white px-3.5 py-1.5 rounded-lg border border-transparent whitespace-nowrap transition-colors" data-tab="kg">
+            4. Knowledge Graph
+          </button>
+          <button class="workspace-tab-btn text-xs font-medium text-zinc-400 hover:text-white px-3.5 py-1.5 rounded-lg border border-transparent whitespace-nowrap transition-colors" data-tab="agents">
+            5. Research Workflow &amp; Agents
+          </button>
+          <button class="workspace-tab-btn text-xs font-medium text-zinc-400 hover:text-white px-3.5 py-1.5 rounded-lg border border-transparent whitespace-nowrap transition-colors" data-tab="quantum">
+            6. Quantum Lab
+          </button>
+          <button class="workspace-tab-btn text-xs font-medium text-zinc-400 hover:text-white px-3.5 py-1.5 rounded-lg border border-transparent whitespace-nowrap transition-colors" data-tab="output">
+            7. Research Output
+          </button>
+        </div>
+      </div>
+
+      <!-- Workspace Active Tab Body -->
+      <div class="max-w-7xl mx-auto px-4 sm:px-8 py-8 w-full flex-grow" id="workspace-tab-container">
+        <!-- Rendered dynamically by app.js based on activeWorkspaceTab -->
+      </div>
+    </section>
+  </div>
+
+  <!-- =====================================================
+  FOOTER
+  ===================================================== -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <a class="footer-logo" href="https://quinfosys.com/" aria-label="Go to Quinfosys homepage">
+          <img src="quinfosys-logo-transparent.png" alt="Quinfosys" />
+        </a>
+        <p class="tagline-heading">Entangle with Quinfosys™</p>
+        <p class="description">
+          Enterprise quantum products, solutions, services, research, and resources for organizations preparing for the next era of computing.
+        </p>
+        <div class="contact-info">
+          <a class="contact-item" href="mailto:info@quinfosys.com?subject=Quinfosys%20inquiry">
+            <span class="icon-circle"><i class="fa-regular fa-envelope"></i></span>
+            <span>info@quinfosys.com</span>
+          </a>
+          <a class="contact-item" href="tel:+919059237828">
+            <span class="icon-circle"><i class="fa-solid fa-phone"></i></span>
+            <span>+91 9059237828</span>
+          </a>
+          <p class="contact-item">
+            <span class="icon-circle"><i class="fa-solid fa-location-dot"></i></span>
+            <span>T-Hub, 7th Floor, Hyderabad Knowledge City, Hyderabad, Telangana, India - 500081</span>
+          </p>
+        </div>
+        <div class="social-links">
+          <a href="https://linkedin.com/company/quinfosys" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visit Quinfosys on LinkedIn">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+          <a href="https://youtube.com/@quinfosys" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visit Quinfosys on YouTube">
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+          <a href="https://twitter.com/quinfosys2023" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visit Quinfosys on X">
+            <i class="fa-brands fa-x-twitter"></i>
+          </a>
+          <a href="https://instagram.com/quinfosys" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visit Quinfosys on Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://facebook.com/quinfosys" target="_blank" rel="noopener noreferrer" class="social-btn" aria-label="Visit Quinfosys on Facebook">
+            <i class="fa-brands fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="footer-columns">
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <h2 class="footer-heading">Navigation</h2>
+          <ul class="footer-links">
+            <li><a href="https://quinfosys.com/products">Products</a></li>
+            <li><a href="https://quinfosys.com/solutions">Solutions</a></li>
+            <li><a href="https://quinfosys.com/services">Services</a></li>
+            <li><a href="https://quinfosys.com/research-development">Research</a></li>
+            <li><a href="https://quinfosys.com/resources">Resources</a></li>
+            <li><a href="https://quinfosys.com/company">Company</a></li>
+          </ul>
+        </nav>
+
+        <nav class="footer-legal" aria-label="Legal">
+          <h2 class="footer-heading">Legal</h2>
+          <ul class="footer-links">
+            <li><a href="https://quinfosys.com/privacy-policy">Privacy Policy</a></li>
+            <li><a href="https://quinfosys.com/terms-of-service">Terms of Service</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-container">
+        <p class="copyright">&copy; 2026 Quinfosys Private Limited. All rights reserved.</p>
+        <p class="bottom-tagline">Entangle with Quinfosys™</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================
+  SIGN IN MODAL (Existing users) — matches reference design
+  ========================================================= -->
+  <div id="auth-modal" class="fixed inset-0 z-50 hidden items-center justify-center" style="background: rgba(0,0,0,0.75); backdrop-filter: blur(4px);">
+    <div class="signin-modal-card">
+      <!-- Yellow accent circle top-right -->
+      <div class="signin-accent-dot"></div>
+      <!-- Close -->
+      <button id="btn-cancel-auth" class="signin-close-btn" aria-label="Close">✕</button>
+
+      <!-- Logo -->
+      <div class="flex justify-center mb-4">
+        <img src="quinfosys-logo-transparent.png" alt="Quinfosys" class="h-12 w-auto object-contain">
+      </div>
+
+      <!-- Title -->
+      <h2 class="signin-title">Sign In</h2>
+
+      <!-- Error Message -->
+      <div id="login-error" class="hidden mb-3 p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs">
+        <span id="login-error-text"></span>
+      </div>
+
+      <!-- Form -->
+      <form id="form-login" class="space-y-3">
+        <div>
+          <label class="signin-label">Username</label>
+          <input type="text" id="login-username" placeholder="Enter your username" class="signin-input" required>
+        </div>
+
+        <div>
+          <label class="signin-label">Password</label>
+          <div class="relative">
+            <input type="password" id="login-password" placeholder="Enter your password" class="signin-input pr-10" required>
+            <button type="button" id="btn-toggle-password" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 text-xs">
+              <svg id="eye-icon" xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+            </button>
+          </div>
+          <div class="text-right mt-1">
+            <a href="forgot-password.html" class="text-xs text-blue-500 hover:text-blue-600">Forgot password?</a>
+          </div>
+        </div>
+
+        <button type="submit" class="signin-btn-primary">Sign In</button>
+
+        <p class="signup-line text-center mt-2">
+          New user?
+          <button type="button" id="btn-goto-signup" class="ml-0.5">Create an account</button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================
+  SIGN UP MODAL (New users) — same look as Sign In
+  ========================================================= -->
+  <div id="signup-modal" class="signup-page-modal fixed inset-0 z-50 hidden items-center justify-center">
+    <div class="signin-modal-card signup-page-card">
+      <!-- Yellow light accent -->
+      <div class="signin-accent-dot" aria-hidden="true"></div>
+      <div class="signup-bulb-base" aria-hidden="true"></div>
+      <!-- Close -->
+      <button id="btn-cancel-signup" class="signin-close-btn" aria-label="Close">✕</button>
+
+      <!-- Logo -->
+      <div class="flex justify-center mb-4">
+        <img src="quinfosys-logo-transparent.png" alt="Quinfosys" class="h-12 w-auto object-contain">
+      </div>
+
+      <!-- Title -->
+      <h2 class="signin-title">Sign Up</h2>
+
+      <!-- Error Message -->
+      <div id="signup-error" class="hidden mb-3 p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs">
+        <span id="signup-error-text"></span>
+      </div>
+
+      <!-- Form -->
+      <form id="form-signin" class="space-y-3">
+        <div>
+          <input type="text" id="signin-name" placeholder="Full name*" class="signin-input" required>
+        </div>
+        <div>
+          <input type="text" id="signin-username" placeholder="Create a username*" class="signin-input" required>
+        </div>
+        <div>
+          <input type="email" id="signin-email" placeholder="Email address*" class="signin-input" required>
+        </div>
+        <div>
+          <input type="tel" id="signin-mobile" placeholder="Mobile number*" class="signin-input" required>
+        </div>
+        <div>
+          <div class="relative">
+            <input type="password" id="signin-password" placeholder="Create password*" class="signin-input pr-10" required>
+            <button type="button" id="btn-toggle-signup-password" class="signup-password-toggle" aria-label="Show password">&#9673;</button>
+          </div>
+        </div>
+
+        <input type="hidden" id="signin-org" value="">
+
+        <div id="signin-error" class="hidden p-3 rounded-xl bg-red-50 border border-red-200 text-red-600 text-xs">
+          <span id="signin-error-text"></span>
+        </div>
+
+        <button type="submit" class="signin-btn-primary signup-btn">Sign Up</button>
+
+        <p class="signup-line text-center mt-2">
+          Already have an account?
+          <button type="button" id="btn-goto-signin" class="ml-0.5">Sign In</button>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <!-- User Account / Profile Inspection Modal -->
+  <div id="user-profile-modal" class="fixed inset-0 z-50 modal-backdrop hidden items-center justify-center p-4">
+    <div class="bg-card-glass rounded-3xl p-6 sm:p-8 border border-white/20 max-w-md w-full shadow-2xl space-y-6">
+      <div class="flex items-center justify-between border-b border-white/10 pb-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-cyan-500 to-indigo-500 flex items-center justify-center text-sm font-bold text-black" id="profile-avatar">
+            QB
+          </div>
+          <div>
+            <h3 class="text-base font-bold text-white font-heading" id="profile-name">Researcher Name</h3>
+            <span class="text-xs font-mono text-cyan-400" id="profile-tier">Researcher Standard</span>
+          </div>
+        </div>
+        <button id="btn-close-profile" class="p-1 rounded-lg text-zinc-400 hover:text-white hover:bg-white/5 transition-colors">✕</button>
+      </div>
+
+      <div class="space-y-3 text-xs">
+        <div class="p-3 rounded-xl bg-black/40 border border-white/5 space-y-1">
+          <div class="text-zinc-500 text-[10px] uppercase font-mono tracking-wider">Email Address</div>
+          <div class="text-zinc-200 font-mono" id="profile-email">email@quinfosys.com</div>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="p-3 rounded-xl bg-black/40 border border-white/5 space-y-1">
+            <div class="text-zinc-500 text-[10px] uppercase font-mono tracking-wider">Role</div>
+            <div class="text-zinc-200" id="profile-role">Scientist</div>
+          </div>
+          <div class="p-3 rounded-xl bg-black/40 border border-white/5 space-y-1">
+            <div class="text-zinc-500 text-[10px] uppercase font-mono tracking-wider">Organization</div>
+            <div class="text-zinc-200" id="profile-org">Quantum Labs</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex items-center justify-between gap-3 pt-2">
+        <button type="button" id="btn-profile-logout" class="glow-btn-secondary text-xs px-4 py-2.5 rounded-xl text-rose-400 hover:border-rose-500/40 transition-colors flex items-center gap-1.5">
+          <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4M16 17l5-5-5-5M21 12H9"/></svg>
+          <span>Log Out</span>
+        </button>
+        <button type="button" id="btn-profile-switch" class="glow-btn-primary text-xs font-semibold px-5 py-2.5 rounded-xl">
+          Switch Account
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. New Research Project Creation Modal -->
+  <div id="new-project-modal" class="fixed inset-0 z-50 modal-backdrop hidden items-center justify-center p-4">
+    <div class="bg-card-glass rounded-3xl p-6 sm:p-8 border border-white/20 max-w-lg w-full shadow-2xl space-y-6">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-bold text-white font-heading">Initiate Research Project</h3>
+        <button id="btn-cancel-new-project" class="text-zinc-400 hover:text-white text-sm">✕</button>
+      </div>
+
+      <form id="form-new-project" class="space-y-4">
+        <div>
+          <label class="block text-xs font-medium text-zinc-300 mb-1">Project Name</label>
+          <input type="text" id="new-project-name" placeholder="e.g. Variational Quantum Eigensolver for Molecular Conformations" class="w-full bg-black/60 border border-white/10 rounded-xl p-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-500/60" required>
+        </div>
+        <div>
+          <label class="block text-xs font-medium text-zinc-300 mb-1">Hypothesis / Central Research Question</label>
+          <textarea id="new-project-hypothesis" rows="3" placeholder="What technical or scientific question is this project investigating?" class="w-full bg-black/60 border border-white/10 rounded-xl p-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-500/60 resize-none" required></textarea>
+        </div>
+        <div class="grid grid-cols-2 gap-3">
+          <div>
+            <label class="block text-xs font-medium text-zinc-300 mb-1">Domain</label>
+            <select id="new-project-domain" class="w-full bg-black/60 border border-white/10 rounded-xl p-2.5 text-xs text-white focus:outline-none">
+              <option>Scientific Research</option>
+              <option>Quantum Computing</option>
+              <option>Pharmaceutical &amp; QML</option>
+              <option>Technical Engineering</option>
+              <option>Enterprise R&amp;D</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-medium text-zinc-300 mb-1">Initial Stage</label>
+            <select id="new-project-stage" class="w-full bg-black/60 border border-white/10 rounded-xl p-2.5 text-xs text-white focus:outline-none">
+              <option>Discover</option>
+              <option>Analyse</option>
+              <option>Create</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex items-center justify-end gap-2 pt-2">
+          <button type="button" id="btn-cancel-new-project-2" class="glow-btn-secondary text-xs px-4 py-2.5 rounded-xl">Cancel</button>
+          <button type="submit" class="glow-btn-primary text-xs font-semibold px-5 py-2.5 rounded-xl">Create Workspace</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Upload Document Modal (Document Intelligence Pipeline) -->
+  <div id="upload-doc-modal" class="fixed inset-0 z-50 modal-backdrop hidden items-center justify-center p-4">
+    <div class="bg-[#0c0c0e] rounded-3xl p-6 sm:p-7 border border-white/20 max-w-2xl w-full shadow-2xl space-y-5 max-h-[90vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between border-b border-white/10 pb-4">
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="badge-pill !text-[9.5px]">Pipeline Ingestion Engine</span>
+            <span class="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/20">768-d Vector Ready</span>
+          </div>
+          <h3 class="text-lg font-bold text-white font-heading mt-1.5">Ingest Research Document</h3>
+          <p class="text-xs text-zinc-400 mt-0.5">Upload a paper (PDF, TXT, MD, JSON, CSV) or select a peer-reviewed research sample. Content is automatically parsed, partitioned into scientific sections, and vectorized.</p>
+        </div>
+        <button id="btn-cancel-upload" class="text-zinc-400 hover:text-white text-lg p-1 rounded-lg hover:bg-white/5 transition-colors" title="Close">✕</button>
+      </div>
+
+      <div class="overflow-y-auto pr-1 space-y-5 flex-grow">
+        <!-- Ingestion Method Tabs / Quick Selectors -->
+        <div class="grid grid-cols-2 gap-2 p-1 bg-black/40 rounded-xl border border-white/10 text-xs">
+          <button type="button" id="btn-tab-upload-file" class="py-2 px-3 rounded-lg font-medium transition-all bg-white/10 text-white shadow-sm flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-cyan-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+            <span>Upload Document File</span>
+          </button>
+          <button type="button" id="btn-tab-upload-sample" class="py-2 px-3 rounded-lg font-medium transition-all text-zinc-400 hover:text-zinc-200 flex items-center justify-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-emerald-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span>Load Sample Research Paper</span>
+          </button>
+        </div>
+
+        <!-- 1-Click Sample Paper Quick Loader -->
+        <div id="sample-paper-selector-box" class="hidden p-3.5 rounded-2xl bg-cyan-950/20 border border-cyan-500/20 space-y-2.5">
+          <div class="flex items-center justify-between">
+            <span class="text-[11px] font-mono font-semibold text-cyan-300 uppercase tracking-wider">Select Pre-configured Research Paper</span>
+            <span class="text-[10px] text-zinc-400">Nature / PRX Benchmarks</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-2" id="sample-papers-btn-list">
+            <!-- Populated dynamically by JS -->
+          </div>
+        </div>
+
+        <!-- Drag & Drop Zone -->
+        <div id="upload-dropzone" class="border-2 border-dashed border-white/20 hover:border-cyan-400/50 rounded-2xl p-6 text-center cursor-pointer transition-all bg-black/30 hover:bg-white/[0.02] flex flex-col items-center justify-center gap-2 group">
+          <input type="file" id="upload-doc-file-input" accept=".pdf,.txt,.md,.markdown,.json,.csv" class="hidden">
+          <div class="w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover:scale-105 group-hover:bg-cyan-500/10 group-hover:border-cyan-500/30 transition-all text-cyan-400">
+            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/>
+            </svg>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-white group-hover:text-cyan-300 transition-colors">
+              Click to browse or drag & drop research paper
+            </p>
+            <p class="text-[11px] text-zinc-500 mt-0.5">
+              Supported Formats: <span class="font-mono text-zinc-400">PDF, TXT, Markdown (.md), JSON, CSV</span> (Max 50MB)
+            </p>
+          </div>
+          <!-- Selected File Badge -->
+          <div id="selected-file-badge" class="hidden mt-1 items-center gap-2 px-3 py-1.5 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-xs text-cyan-300 font-mono">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+            <span id="selected-file-name" class="font-medium">filename.pdf</span>
+            <span id="selected-file-size" class="text-zinc-400 text-[10px]">(0 KB)</span>
+            <button type="button" id="btn-clear-selected-file" class="ml-1 text-zinc-400 hover:text-rose-400" title="Remove file">✕</button>
+          </div>
+        </div>
+
+        <form id="form-upload-doc" class="space-y-4">
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <div class="sm:col-span-2">
+              <label class="block text-xs font-medium text-zinc-300 mb-1">Document / Paper Title <span class="text-cyan-400">*</span></label>
+              <input type="text" id="upload-doc-title" placeholder="e.g. Active Space VQE for Strongly Correlated Electronic Systems" class="w-full bg-black/60 border border-white/10 rounded-xl p-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-500/60" required>
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-zinc-300 mb-1">Source Type</label>
+              <select id="upload-doc-type" class="w-full bg-black/60 border border-white/10 rounded-xl p-2.5 text-xs text-white focus:outline-none">
+                <option>Peer-reviewed Paper</option>
+                <option>Preprint (arXiv)</option>
+                <option>Technical Whitepaper</option>
+                <option>Conference Proceedings</option>
+                <option>Patent Documentation</option>
+                <option>Experimental Dataset</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div>
+              <label class="block text-xs font-medium text-zinc-300 mb-1">Authors / Research Institution</label>
+              <input type="text" id="upload-doc-authors" placeholder="e.g. McArdle, S., O'Brien, T. (Nature Reviews Physics)" class="w-full bg-black/60 border border-white/10 rounded-xl p-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-500/60">
+            </div>
+            <div>
+              <label class="block text-xs font-medium text-zinc-300 mb-1">Publication Year</label>
+              <input type="number" id="upload-doc-year" value="2026" min="1950" max="2035" class="w-full bg-black/60 border border-white/10 rounded-xl p-2.5 text-xs text-white focus:outline-none focus:border-cyan-500/60 font-mono">
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-1">
+              <label class="block text-xs font-medium text-zinc-300">Document Text / Content Stream</label>
+              <span class="text-[10px] text-zinc-500 font-mono" id="upload-text-counter">0 words</span>
+            </div>
+            <textarea id="upload-doc-text" rows="5" placeholder="Document content will automatically appear here upon file upload, or you may directly paste research paper text, sections, and abstracts..." class="w-full bg-black/60 border border-white/10 rounded-xl p-2.5 text-xs text-white placeholder-zinc-500 focus:outline-none focus:border-cyan-500/60 resize-none font-mono leading-relaxed"></textarea>
+          </div>
+
+          <!-- Ingestion Progress Pipeline Banner (Animated during processing) -->
+          <div id="upload-pipeline-progress" class="hidden p-4 rounded-2xl bg-black/60 border border-cyan-500/30 space-y-3">
+            <div class="flex items-center justify-between text-xs">
+              <span class="font-medium text-white flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-cyan-400 animate-ping"></span>
+                <span id="pipeline-stage-text">Ingesting Document Stream...</span>
+              </span>
+              <span class="font-mono text-cyan-400 text-[11px]" id="pipeline-stage-percent">20%</span>
+            </div>
+            <!-- Progress Track -->
+            <div class="w-full bg-white/10 h-1.5 rounded-full overflow-hidden">
+              <div id="pipeline-progress-bar" class="bg-gradient-to-r from-cyan-400 via-indigo-500 to-emerald-400 h-full rounded-full transition-all duration-300" style="width: 20%"></div>
+            </div>
+            <!-- Pipeline Step Pills -->
+            <div class="grid grid-cols-4 gap-1 text-[10px] font-mono text-center">
+              <div id="step-pill-1" class="py-1 px-1 rounded bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">1. Extract Stream</div>
+              <div id="step-pill-2" class="py-1 px-1 rounded bg-white/5 text-zinc-400 border border-white/10">2. Segment Sections</div>
+              <div id="step-pill-3" class="py-1 px-1 rounded bg-white/5 text-zinc-400 border border-white/10">3. 768-d Chunks</div>
+              <div id="step-pill-4" class="py-1 px-1 rounded bg-white/5 text-zinc-400 border border-white/10">4. Discover Entities</div>
+            </div>
+          </div>
+
+          <div class="flex items-center justify-end gap-2 pt-2 border-t border-white/10">
+            <button type="button" id="btn-cancel-upload-2" class="glow-btn-secondary text-xs px-4 py-2.5 rounded-xl">Cancel</button>
+            <button type="submit" id="btn-submit-upload" class="glow-btn-primary text-xs font-semibold px-5 py-2.5 rounded-xl flex items-center gap-2">
+              <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M17 8l-5-5-5 5M12 3v12"/></svg>
+              <span>Run Pipeline & Index</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. Inspect Document Modal (Multi-Tab Intelligence Viewer) -->
+  <div id="inspect-doc-modal" class="fixed inset-0 z-50 modal-backdrop hidden items-center justify-center p-4">
+    <div class="bg-[#0c0c0e] rounded-3xl p-6 sm:p-7 border border-white/20 max-w-4xl w-full shadow-2xl space-y-5 max-h-[88vh] flex flex-col">
+      <!-- Modal Header -->
+      <div class="flex items-start justify-between border-b border-white/10 pb-4">
+        <div class="space-y-1.5">
+          <div class="flex flex-wrap items-center gap-2">
+            <span id="inspect-badge-type" class="badge-pill !text-[9.5px]">Peer-reviewed Paper</span>
+            <span id="inspect-badge-status" class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">● Indexed</span>
+            <span id="inspect-badge-vector" class="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded-full border border-cyan-500/20">Vector Synced (768-dim)</span>
+          </div>
+          <h3 class="text-base sm:text-lg font-bold text-white font-heading" id="inspect-doc-title">Document Title</h3>
+          <div class="text-xs text-zinc-400 font-mono flex flex-wrap items-center gap-3">
+            <span id="inspect-doc-authors">Authors</span>
+            <span>•</span>
+            <span id="inspect-doc-filesize">Size: 418 KB</span>
+            <span>•</span>
+            <span id="inspect-doc-words">1,240 words</span>
+            <span>•</span>
+            <span id="inspect-doc-tokens">1,650 tokens</span>
+          </div>
+        </div>
+        <div class="flex items-center gap-2 shrink-0">
+          <button id="btn-download-original-doc" class="p-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-zinc-300 hover:text-white transition-colors text-xs flex items-center gap-1.5" title="Download original stored document">
+            <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            <span class="hidden sm:inline">Download Raw</span>
+          </button>
+          <button id="btn-close-inspect-doc" class="text-zinc-400 hover:text-white text-lg p-1.5 rounded-xl hover:bg-white/5 transition-colors" title="Close">✕</button>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs -->
+      <div class="flex items-center gap-2 border-b border-white/10 pb-2 text-xs font-medium overflow-x-auto">
+        <button id="inspect-nav-chunks" class="inspect-tab-btn py-1.5 px-3.5 rounded-xl bg-white/10 text-white flex items-center gap-1.5 shrink-0" data-tab="chunks">
+          <span>Semantic Chunks & Embeddings</span>
+          <span id="inspect-count-chunks" class="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300">0</span>
+        </button>
+        <button id="inspect-nav-sections" class="inspect-tab-btn py-1.5 px-3.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/5 flex items-center gap-1.5 shrink-0" data-tab="sections">
+          <span>Section Breakdown</span>
+          <span id="inspect-count-sections" class="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-white/10 text-zinc-300">0</span>
+        </button>
+        <button id="inspect-nav-entities" class="inspect-tab-btn py-1.5 px-3.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/5 flex items-center gap-1.5 shrink-0" data-tab="entities">
+          <span>Discovered Scientific Entities</span>
+          <span id="inspect-count-entities" class="text-[10px] font-mono px-1.5 py-0.5 rounded-full bg-purple-500/20 text-purple-300">0</span>
+        </button>
+        <button id="inspect-nav-raw" class="inspect-tab-btn py-1.5 px-3.5 rounded-xl text-zinc-400 hover:text-white hover:bg-white/5 flex items-center gap-1.5 shrink-0" data-tab="raw">
+          <span>Stored Raw Document</span>
+        </button>
+      </div>
+
+      <!-- Tab Panes Container -->
+      <div class="overflow-y-auto pr-2 flex-grow space-y-4" id="inspect-modal-body">
+        <!-- 1. Semantic Chunks Pane -->
+        <div id="inspect-pane-chunks" class="space-y-3"></div>
+
+        <!-- 2. Sections Breakdown Pane -->
+        <div id="inspect-pane-sections" class="hidden space-y-3"></div>
+
+        <!-- 3. Scientific Entities Pane -->
+        <div id="inspect-pane-entities" class="hidden space-y-3"></div>
+
+        <!-- 4. Raw Text Content Pane -->
+        <div id="inspect-pane-raw" class="hidden space-y-3"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="app-toast" class="fixed bottom-6 right-6 z-50 bg-[#111111] border border-white/20 text-white text-xs px-4 py-3 rounded-xl shadow-2xl transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2">
+    <!-- Toast message injected by app.js -->
+  </div>
+
+  <!-- Application Scripts (Zero-dependency, works directly via file:// or http://) -->
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>

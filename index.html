@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="Quinfosys™ Quantum AI combines Artificial Intelligence, Quantum Computing, Knowledge, Reasoning and Research into an integrated intelligence platform."
+    />
+    <title>Quinfosys™ Quantum AI</title>
+    <link rel="icon" type="image/png" href="/quinfosys-logo-transparent.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              brandDark: {
+                0: "#040404",
+                1: "#060606",
+                2: "#080808",
+                3: "#0e0e0e",
+                4: "#141414",
+              },
+            },
+            fontFamily: {
+              sans: ["Inter", "sans-serif"],
+              heading: ["Manrope", "Inter", "sans-serif"],
+              mono: ["JetBrains Mono", "monospace"],
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-[#060606] text-zinc-300 min-h-screen selection:bg-white selection:text-black flex flex-col font-sans">
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

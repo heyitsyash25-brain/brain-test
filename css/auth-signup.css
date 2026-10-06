@@ -1,0 +1,346 @@
+/* ==========================================================================
+   Quinfosys Quantum AI — Sign Up Page Styles (qiscode.quinfosys.com Reference)
+   ========================================================================== */
+
+:root {
+  --bg-page: #fcfcfc;
+  --bg-card: #ffffff;
+  --bg-panel: #f1f1f3;
+  --border-card: #e0e0e3;
+  --border-input: #d0d0d5;
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.1);
+  --text-heading: #000000;
+  --text-label: #1a1a1a;
+  --text-muted: #575759;
+  --bg-input: #ffffff;
+  --text-input: #000000;
+  --placeholder-input: #76767c;
+  --accent: #007acc;
+  --accent-hover: #005999;
+}
+
+body.theme-dark,
+body.auth-page.auth-signup.theme-dark,
+[data-theme="dark"] {
+  --bg-page: #000000;
+  --bg-card: #18181a;
+  --bg-panel: #111113;
+  --border-card: #2e2e31;
+  --border-input: #2e2e31;
+  --shadow-card: 0 12px 40px rgba(0, 0, 0, 0.55);
+  --text-heading: #ffffff;
+  --text-label: #ffffff;
+  --text-muted: #9a9a9d;
+  --bg-input: #111113;
+  --text-input: #ffffff;
+  --placeholder-input: #8e8e93;
+  --accent: #007acc;
+  --accent-hover: #005999;
+}
+
+body.auth-page.auth-signup {
+  font-family: "SF Pro Text", Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--bg-page);
+  color: var(--text-label);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 1.5rem 1rem;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signup-card,
+.auth-card {
+  position: relative;
+  width: 100%;
+  max-width: 520px;
+  background: var(--bg-card);
+  padding: 40px 48px;
+  border-radius: 14px;
+  border: 1px solid var(--border-card);
+  text-align: center;
+  box-shadow: var(--shadow-card);
+  transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+}
+
+/* Lightbulb Toggle Switch */
+.bulb-container {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  height: 34px;
+  width: 28px;
+  z-index: 10;
+  user-select: none;
+}
+
+.bulb-toggle {
+  position: relative;
+  display: block;
+  width: 24px;
+  height: 30px;
+  background: #d2d2d6;
+  border-radius: 50% 50% 35% 35% / 45% 45% 55% 55%;
+  transition: all 0.4s ease;
+}
+
+.bulb-toggle::before {
+  content: ' ';
+  display: block;
+  width: 12px;
+  height: 8px;
+  background: #8e8e93;
+  border-radius: 0 0 3px 3px;
+  position: absolute;
+  bottom: -6px;
+  left: 6px;
+  box-shadow: 0 1px 0 #6e6e73 inset;
+}
+
+body:not(.theme-dark) .bulb-toggle {
+  background: #ffdb15;
+  box-shadow: 0 0 15px #ffdb15, 0 0 30px rgba(255, 219, 21, 0.4);
+}
+
+body:not(.theme-dark) .bulb-toggle::before {
+  background: #c0c0c5;
+  box-shadow: 0 1px 0 #8e8e93 inset;
+}
+
+/* Brand Logo Container */
+.auth-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 18px;
+}
+
+.auth-logo-switch {
+  position: relative;
+  display: block;
+  width: 190px;
+  height: 44px;
+}
+
+.auth-logo-switch img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.auth-logo-dark {
+  opacity: 0;
+}
+
+.auth-logo-light {
+  opacity: 1;
+}
+
+body.theme-dark .auth-logo-light {
+  opacity: 0;
+}
+
+body.theme-dark .auth-logo-dark {
+  opacity: 1;
+}
+
+/* Titles and Headers */
+.auth-title {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text-heading);
+  transition: color 0.3s ease;
+}
+
+.auth-subtitle {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+  letter-spacing: -0.1px;
+  transition: color 0.3s ease;
+}
+
+/* Inputs */
+.auth-input,
+.form-input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 12px;
+  border: 1px solid var(--border-input);
+  border-radius: 8px;
+  box-sizing: border-box;
+  background: var(--bg-input);
+  color: var(--text-input);
+  outline: none;
+  font-size: 14px;
+  font-family: inherit;
+  transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+}
+
+.auth-input::placeholder,
+.form-input::placeholder {
+  color: var(--placeholder-input);
+}
+
+.auth-input:focus,
+.form-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 122, 204, 0.2);
+}
+
+/* Password Input Wrapper & Toggle Eye Button */
+.password-input-wrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.password-input-wrapper .auth-input {
+  margin-bottom: 0;
+  padding-right: 44px;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.password-toggle-btn:hover {
+  color: var(--text-heading);
+  opacity: 0.9;
+}
+
+/* Password Validation Requirements Box */
+.password-requirements {
+  margin: 10px 0 16px;
+  padding: 12px 16px;
+  background: var(--bg-panel);
+  border-radius: 8px;
+  font-size: 12.5px;
+  text-align: left;
+  border-left: 3px solid var(--border-input);
+  transition: background 0.3s ease, border-color 0.3s ease;
+}
+
+.requirement-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 4px 0;
+  font-size: 11.5px;
+}
+
+.requirement-item.met {
+  color: #22c55e;
+  font-weight: 600;
+}
+
+.requirement-item.unmet {
+  color: var(--text-muted);
+}
+
+/* Action Submit Button */
+.signup-btn,
+.submit-btn {
+  width: 100%;
+  padding: 15px;
+  background: var(--accent);
+  color: #ffffff;
+  border: none;
+  border-radius: 30px;
+  font-weight: 700;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 8px;
+  transition: background 0.3s ease, transform 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.signup-btn:hover,
+.submit-btn:hover {
+  background: var(--accent-hover);
+}
+
+.signup-btn:active,
+.submit-btn:active {
+  transform: scale(0.99);
+}
+
+/* Footer Link Area */
+.auth-footer {
+  margin-top: 18px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+.auth-footer-link {
+  color: var(--accent);
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  margin-left: 4px;
+}
+
+.auth-footer-link:hover {
+  text-decoration: underline;
+}
+
+/* Error message display */
+.auth-error-msg {
+  color: #ef4444;
+  font-size: 12px;
+  margin-top: 10px;
+  font-weight: 600;
+  padding: 8px 12px;
+  background: rgba(239, 68, 68, 0.1);
+  border-radius: 6px;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 480px) {
+  .signup-card,
+  .auth-card {
+    padding: 24px 20px;
+    border-radius: 12px;
+  }
+  .bulb-container {
+    top: 14px;
+    right: 14px;
+  }
+}

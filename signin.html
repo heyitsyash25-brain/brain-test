@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign In — Quinfosys™ Quantum AI</title>
+  <meta name="description" content="Sign in to your Quinfosys Quantum AI workspace.">
+  <link rel="icon" type="image/png" href="quinfosys-logo-transparent.png">
+  
+  <!-- Fonts: Inter / SF Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/auth-signin.css">
+</head>
+<body class="theme-dark auth-page auth-signin">
+
+  <!-- Sign In Card Container -->
+  <main class="auth-card signin-card">
+    <!-- Bulb Theme Switcher -->
+    <div id="btn-theme-toggle" class="bulb-container" title="Switch Theme" aria-label="Toggle theme">
+      <span class="bulb-toggle"></span>
+    </div>
+
+    <!-- Centered Logo -->
+    <div class="auth-logo-container">
+      <a href="index.html" class="inline-block" title="Quinfosys Quantum AI Home">
+        <span class="auth-logo-switch">
+          <img src="quinfosys-logo-transparent.png" alt="Quinfosys Logo" class="auth-logo-light">
+          <img src="quinfosys-logo-dark.png" alt="Quinfosys Logo" class="auth-logo-dark">
+        </span>
+      </a>
+    </div>
+
+    <!-- Title and Subtitle -->
+    <h1 class="auth-title">Sign in to your Quantum AI account</h1>
+    <p class="auth-subtitle">to continue to Quinfosys™ Quantum AI</p>
+
+    <!-- Error message display -->
+    <div id="signin-error-box" class="auth-error-msg" style="display: none;">
+      <span id="signin-error-text"></span>
+    </div>
+
+    <!-- Sign In Form -->
+    <form id="signin-form">
+      <div>
+        <input 
+          type="text" 
+          id="loginUser" 
+          class="auth-input" 
+          placeholder="Username or email address*" 
+          required 
+          autocomplete="username"
+        >
+      </div>
+
+      <div class="password-input-wrapper">
+        <input 
+          type="password" 
+          id="loginPass" 
+          class="auth-input" 
+          placeholder="Password*" 
+          required 
+          autocomplete="current-password"
+        >
+        <button 
+          type="button" 
+          id="btn-toggle-password" 
+          class="password-toggle-btn" 
+          title="Show/Hide password"
+        >
+          👁
+        </button>
+      </div>
+
+      <a href="forgot-password.html" class="forgot-password-link">
+        Forgot password?
+      </a>
+
+      <button type="submit" id="btn-submit-signin" class="signin-btn">
+        Sign In
+      </button>
+
+      <p class="auth-footer">
+        New to Quantum AI? 
+        <a href="signup.html" class="auth-footer-link">
+          Create an account
+        </a>
+      </p>
+    </form>
+  </main>
+
+  <!-- Script Logic -->
+  <script type="module" src="js/data.js"></script>
+  <script>
+    (function() {
+      const form = document.getElementById("signin-form");
+      const errorBox = document.getElementById("signin-error-box");
+      const errorText = document.getElementById("signin-error-text");
+      const usernameInput = document.getElementById("loginUser");
+      const passwordInput = document.getElementById("loginPass");
+      const togglePasswordBtn = document.getElementById("btn-toggle-password");
+      const themeToggleBtn = document.getElementById("btn-theme-toggle");
+
+      let currentTheme = localStorage.getItem("qb_theme") || "dark";
+
+      function applyTheme(theme) {
+        currentTheme = theme;
+        localStorage.setItem("qb_theme", theme);
+        document.body.classList.toggle("theme-dark", theme === "dark");
+      }
+
+      applyTheme(currentTheme);
+
+      themeToggleBtn?.addEventListener("click", () => {
+        applyTheme(currentTheme === "light" ? "dark" : "light");
+      });
+
+      // Toggle password visibility
+      togglePasswordBtn?.addEventListener("click", () => {
+        const isPassword = passwordInput.type === "password";
+        passwordInput.type = isPassword ? "text" : "password";
+        togglePasswordBtn.textContent = isPassword ? "🙈" : "👁";
+      });
+
+      function showError(msg) {
+        errorText.textContent = msg;
+        errorBox.style.display = "block";
+      }
+
+      form.addEventListener("submit", function(e) {
+        e.preventDefault();
+        const userInput = usernameInput.value.trim();
+        const password = passwordInput.value;
+
+        if (!userInput || !password) {
+          showError("Please enter your username/email and password.");
+          return;
+        }
+
+        const submitButton = document.getElementById("btn-submit-signin");
+        submitButton.disabled = true;
+        submitButton.textContent = "Signing In...";
+
+        let usersDb = [];
+        try {
+          const savedDb = localStorage.getItem("qb_users_db");
+          if (savedDb) usersDb = JSON.parse(savedDb);
+        } catch (err) {}
+
+        if (!Array.isArray(usersDb) || usersDb.length === 0) {
+          usersDb = window.QB_DATA?.INITIAL_REGISTERED_USERS || [];
+        }
+
+        const term = userInput.toLowerCase();
+        let matchedUser = usersDb.find(u => 
+          (u.email && u.email.toLowerCase() === term) || 
+          (u.username && u.username.toLowerCase() === term)
+        );
+
+        if (!matchedUser && (term.includes("elena") || term.includes("quinfosys"))) {
+          matchedUser = window.QB_DATA?.INITIAL_USER || {
+            name: "Dr. Elena Rostova",
+            username: "elena",
+            email: "elena.rostova@quinfosys.com",
+            role: "Principal Quantum & AI Scientist",
+            organization: "Quinfosys Quantum Labs"
+          };
+          usersDb.push(matchedUser);
+          localStorage.setItem("qb_users_db", JSON.stringify(usersDb));
+        }
+
+        if (!matchedUser) {
+          showError(`No account found for "${userInput}". Redirecting to Sign Up...`);
+          setTimeout(() => {
+            window.location.href = "signup.html";
+          }, 1800);
+          return;
+        }
+
+        localStorage.setItem("qb_user", JSON.stringify(matchedUser));
+        localStorage.setItem("qb_auth", "true");
+
+        window.location.href = "index.html#dashboard";
+      });
+    })();
+  </script>
+</body>
+</html>

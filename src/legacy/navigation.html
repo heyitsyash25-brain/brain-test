@@ -1,0 +1,120 @@
+<header class="sticky top-0 z-50 backdrop-blur-xl bg-white border-b border-black/10 shadow-sm transition-all">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+      <!-- Left side: Back Button & Brand Logo -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <!-- Top Left Back Arrow Button (←) to navigate to previous page -->
+        <button id="btn-top-back" class="hidden p-2 rounded-xl bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white border border-white/10 transition-all items-center justify-center group" title="Back to previous page" aria-label="Go to previous page">
+          <svg class="w-4 h-4 transform group-hover:-translate-x-0.5 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M19 12H5M12 19l-7-7 7-7"/>
+          </svg>
+        </button>
+
+        <!-- Brand Logo -->
+        <a href="https://quinfosys.com/" class="flex items-center gap-3 cursor-pointer brand-logo-btn" aria-label="Visit Quinfosys website">
+          <img src="quinfosys-logo-transparent.png" alt="Quinfosys" class="h-9 w-auto object-contain" style="filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));">
+            <div class="hidden sm:flex flex-col">
+            <div class="flex items-center gap-1.5">
+              <span class="text-sm sm:text-base font-bold text-zinc-950 tracking-tight font-heading"></span>
+              <span class="text-xs sm:text-sm font-medium text-zinc-500 font-heading"></span>
+            </div>
+          </div>
+        </a>
+      </div>
+
+      <!-- Center Desktop Navigation Links -->
+      <nav class="hidden md:flex flex-nowrap items-center gap-3 text-xs sm:text-sm font-medium text-zinc-600">
+        <a href="#features" class="nav-link hover:text-zinc-950 transition-colors">Quantum AI</a>
+
+        <div class="relative group">
+          <button type="button" class="flex items-center gap-1 hover:text-zinc-950 transition-colors focus:outline-none">
+            <span>Developers</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="absolute left-0 top-full mt-3 w-56 rounded-xl border border-zinc-200 bg-white p-2 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50">
+            <a href="#" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Quantum AI Code</a>
+            <a href="#" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Quantum AI
+               Platform</a>
+            <a href="#solutions" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Scientific Work</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <button type="button" class="flex items-center gap-1 hover:text-zinc-950 transition-colors focus:outline-none">
+            <span>Enterprise</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="absolute left-0 top-full mt-3 w-56 rounded-xl border border-zinc-200 bg-white p-2 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50">
+            <a href="#target-users" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Target Users</a>
+            <a href="#enterprise" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Enterprise Solutions</a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <a href="#use-cases" class="flex items-center gap-1 hover:text-zinc-950 transition-colors focus:outline-none">
+            <span>Resources</span>
+            <svg class="w-3.5 h-3.5 transition-transform group-hover:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+          </a>
+          <div class="absolute left-0 top-full mt-3 w-52 rounded-xl border border-zinc-200 bg-white p-2 shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible transition-all z-50">
+            
+            <a href="#use-cases" class="nav-link block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Use Cases</a>
+            <a href="#use-cases" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Docs</a>
+            <a href="#use-cases" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">Papers</a>
+            <a href="#" class="block rounded-lg px-3 py-2 text-sm text-zinc-700 hover:bg-zinc-100 hover:text-zinc-950">APIs</a>
+          </div>
+        </div>
+
+        <a href="#pricing" class="nav-link hover:text-zinc-950 transition-colors">Pricing</a>
+      </nav>
+
+      <!-- Right Action CTAs: Injected dynamically by app.js (Sign Up, Sign In, Get Started) -->
+      <div class="hidden md:flex shrink-0 items-center gap-3" id="nav-actions">
+        <!-- Injected dynamically by app.js -->
+      </div>
+
+      <!-- Mobile Hamburger Button -->
+      <button id="mobile-menu-toggle" class="md:hidden p-2 rounded-lg text-zinc-600 hover:text-zinc-950 hover:bg-zinc-100" aria-label="Toggle navigation menu">
+        <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+
+    <!-- Mobile Nav Drawer -->
+    <div id="mobile-nav" class="hidden md:hidden border-t border-black/10 bg-white px-4 py-4 space-y-3">
+      <a href="#features" class="block text-sm text-zinc-700 hover:text-zinc-950 mobile-nav-link">Quantum AI</a>
+
+      <details class="group">
+        <summary class="list-none flex cursor-pointer items-center justify-between text-sm text-zinc-700 hover:text-zinc-950">Developers <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="mt-2 ml-3 space-y-2 border-l border-zinc-200 pl-3">
+          <a href="#" class="block text-sm text-zinc-600 hover:text-zinc-950">Quantum AI Code</a>
+          <a href="#" class="block text-sm text-zinc-600 hover:text-zinc-950">Quantum AI Platform</a>
+          <a href="#solutions" class="block text-sm text-zinc-600 hover:text-zinc-950">Scientific Work</a>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="list-none flex cursor-pointer items-center justify-between text-sm text-zinc-700 hover:text-zinc-950">Enterprise <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="mt-2 ml-3 space-y-2 border-l border-zinc-200 pl-3">
+          <a href="#target-users" class="block text-sm text-zinc-600 hover:text-zinc-950">Target Users</a>
+          <a href="#enterprise" class="block text-sm text-zinc-600 hover:text-zinc-950">Enterprise Solutions</a>
+        </div>
+      </details>
+
+      <details class="group">
+        <summary class="list-none flex cursor-pointer items-center justify-between text-sm text-zinc-700 hover:text-zinc-950">Resources <svg class="w-4 h-4 transition-transform group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg></summary>
+        <div class="mt-2 ml-3 space-y-2 border-l border-zinc-200 pl-3">
+          
+          <a href="#use-cases" class="block text-sm text-zinc-600 hover:text-zinc-950">Use Cases</a>
+          <a href="#use-cases" class="block text-sm text-zinc-600 hover:text-zinc-950">Docs</a>
+          <a href="#use-cases" class="block text-sm text-zinc-600 hover:text-zinc-950">Papers</a>
+          <a href="#" class="block text-sm text-zinc-600 hover:text-zinc-950">APIs</a>
+        </div>
+      </details>
+
+      <a href="#pricing" class="block text-sm text-zinc-700 hover:text-zinc-950 mobile-nav-link">Pricing</a>
+      <div id="mobile-nav-actions" class="pt-3 border-t border-black/10">
+        <div class="flex items-center gap-3">
+          <a href="signin.html" class="flex-1 text-center py-2 text-xs font-semibold text-zinc-700 bg-zinc-100 rounded-lg">Sign In</a>
+        </div>
+        <button id="btn-mobile-getstarted" class="w-full mt-3 py-2 text-xs font-semibold text-white bg-[#1677d2] rounded-lg">Get Started</button>
+      </div>
+    </div>
+  </header>

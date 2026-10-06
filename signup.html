@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up — Quinfosys™ Quantum AI</title>
+  <meta name="description" content="Create your Quinfosys Quantum AI account.">
+  <link rel="icon" type="image/png" href="quinfosys-logo-transparent.png">
+  
+  <!-- Fonts: Inter / SF Pro -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/auth-signup.css">
+</head>
+<body class="theme-dark auth-page auth-signup">
+
+  <!-- Sign Up Card Container -->
+  <main class="auth-card signup-card">
+    <!-- Bulb Theme Switcher -->
+    <div id="btn-theme-toggle" class="bulb-container" title="Switch Theme" aria-label="Toggle theme">
+      <span class="bulb-toggle"></span>
+    </div>
+
+    <!-- Centered Logo -->
+    <div class="auth-logo-container">
+      <a href="index.html" class="inline-block" title="Quinfosys Quantum AI Home">
+        <span class="auth-logo-switch">
+          <img src="quinfosys-logo-transparent.png" alt="Quinfosys Logo" class="auth-logo-light">
+          <img src="quinfosys-logo-dark.png" alt="Quinfosys Logo" class="auth-logo-dark">
+        </span>
+      </a>
+    </div>
+
+    <!-- Title and Subtitle -->
+    <h1 class="auth-title">Create your Quantum AI account</h1>
+    <p class="auth-subtitle">to continue to Quinfosys™ Quantum AI</p>
+
+    <!-- Error message display -->
+    <div id="signup-error-box" class="auth-error-msg" style="display: none;">
+      <span id="signup-error-text"></span>
+    </div>
+
+    <!-- Registration Form -->
+    <form id="signup-form">
+      <div>
+        <input 
+          type="text" 
+          id="regFullName" 
+          class="auth-input" 
+          placeholder="Full name*" 
+          required 
+          autocomplete="name"
+        >
+      </div>
+
+      <div>
+        <input 
+          type="text" 
+          id="regUsername" 
+          class="auth-input" 
+          placeholder="Create a username*" 
+          required 
+          autocomplete="username"
+        >
+      </div>
+
+      <div>
+        <input 
+          type="email" 
+          id="regEmail" 
+          class="auth-input" 
+          placeholder="Email address*" 
+          required 
+          autocomplete="email"
+        >
+      </div>
+
+      <div>
+        <input 
+          type="tel" 
+          id="regMobile" 
+          class="auth-input" 
+          placeholder="Mobile number*" 
+          required 
+          autocomplete="tel"
+        >
+      </div>
+
+      <div class="password-input-wrapper">
+        <input 
+          type="password" 
+          id="regPass" 
+          class="auth-input" 
+          placeholder="Create password*" 
+          required 
+          autocomplete="new-password"
+        >
+        <button 
+          type="button" 
+          id="btn-toggle-password" 
+          class="password-toggle-btn" 
+          title="Show/Hide password"
+        >
+          👁
+        </button>
+      </div>
+
+      <!-- Password Validation Checklist -->
+      <div id="passwordRequirements" class="password-requirements" style="display: none;">
+        <div id="req-length" class="requirement-item unmet"><span>○</span> At least 8 characters</div>
+        <div id="req-case" class="requirement-item unmet"><span>○</span> Uppercase & lowercase letters</div>
+        <div id="req-number" class="requirement-item unmet"><span>○</span> At least 1 number</div>
+        <div id="req-special" class="requirement-item unmet"><span>○</span> At least 1 special character (!@#$%^&*)</div>
+      </div>
+
+      <button type="submit" id="btn-submit-signup" class="signup-btn">
+        Sign Up
+      </button>
+
+      <p class="auth-footer">
+        Already have an account? 
+        <a href="signin.html" class="auth-footer-link">
+          Sign In
+        </a>
+      </p>
+    </form>
+  </main>
+
+  <!-- Script Logic -->
+  <script type="module" src="js/data.js"></script>
+  <script>
+    (function() {
+      const form = document.getElementById("signup-form");
+      const errorBox = document.getElementById("signup-error-box");
+      const errorText = document.getElementById("signup-error-text");
+      const passwordInput = document.getElementById("regPass");
+      const togglePasswordBtn = document.getElementById("btn-toggle-password");
+      const themeToggleBtn = document.getElementById("btn-theme-toggle");
+      const reqBox = document.getElementById("passwordRequirements");
+
+      let currentTheme = localStorage.getItem("qb_theme") || "dark";
+
+      function applyTheme(theme) {
+        currentTheme = theme;
+        localStorage.setItem("qb_theme", theme);
+        document.body.classList.toggle("theme-dark", theme === "dark");
+      }
+
+      applyTheme(currentTheme);
+
+      themeToggleBtn?.addEventListener("click", () => {
+        applyTheme(currentTheme === "light" ? "dark" : "light");
+      });
+
+      // Toggle password visibility
+      togglePasswordBtn?.addEventListener("click", () => {
+        const isPassword = passwordInput.type === "password";
+        passwordInput.type = isPassword ? "text" : "password";
+        togglePasswordBtn.textContent = isPassword ? "🙈" : "👁";
+      });
+
+      // Password Validation Logic
+      passwordInput?.addEventListener("input", () => {
+        const val = passwordInput.value;
+        if (val.length > 0) {
+          reqBox.style.display = "block";
+        } else {
+          reqBox.style.display = "none";
+        }
+
+        const lenOk = val.length >= 8;
+        const caseOk = /[a-z]/.test(val) && /[A-Z]/.test(val);
+        const numOk = /\d/.test(val);
+        const specOk = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/.test(val);
+
+        updateReqItem("req-length", lenOk);
+        updateReqItem("req-case", caseOk);
+        updateReqItem("req-number", numOk);
+        updateReqItem("req-special", specOk);
+      });
+
+      function updateReqItem(id, isMet) {
+        const el = document.getElementById(id);
+        if (!el) return;
+        el.className = `requirement-item ${isMet ? "met" : "unmet"}`;
+        el.querySelector("span").textContent = isMet ? "✓" : "○";
+      }
+
+      function showError(msg) {
+        errorText.textContent = msg;
+        errorBox.style.display = "block";
+      }
+
+      form.addEventListener("submit", async function(e) {
+        e.preventDefault();
+        const fullname = document.getElementById("regFullName").value.trim();
+        const username = document.getElementById("regUsername").value.trim();
+        const email = document.getElementById("regEmail").value.trim().toLowerCase();
+        const mobile = document.getElementById("regMobile").value.trim();
+        const password = passwordInput.value;
+
+        if (!fullname || !username || !email || !mobile || !password) {
+          showError("Please fill in all required fields marked with *");
+          return;
+        }
+
+        const submitButton = document.getElementById("btn-submit-signup");
+        submitButton.disabled = true;
+        submitButton.textContent = "Creating account...";
+
+        let usersDb = [];
+        try {
+          const savedDb = localStorage.getItem("qb_users_db");
+          if (savedDb) usersDb = JSON.parse(savedDb);
+        } catch (err) {}
+
+        if (!Array.isArray(usersDb) || usersDb.length === 0) {
+          usersDb = window.QB_DATA?.INITIAL_REGISTERED_USERS || [];
+        }
+
+        const existing = usersDb.find(u => 
+          (u.email && u.email.toLowerCase() === email) || 
+          (u.username && u.username.toLowerCase() === username.toLowerCase())
+        );
+
+        if (existing) {
+          showError(`An account with this email or username already exists. Please Sign In.`);
+          setTimeout(() => {
+            window.location.href = "signin.html";
+          }, 1800);
+          return;
+        }
+
+        const newUser = {
+          id: "user-" + Date.now(),
+          name: fullname,
+          username: username,
+          email: email,
+          mobile: mobile,
+          role: "Quantum Research Associate",
+          organization: "Quinfosys Research",
+          tier: "Researcher Standard"
+        };
+
+        usersDb.push(newUser);
+        localStorage.setItem("qb_users_db", JSON.stringify(usersDb));
+        localStorage.setItem("qb_user", JSON.stringify(newUser));
+        localStorage.setItem("qb_auth", "true");
+
+        window.location.href = "index.html#dashboard";
+      });
+    })();
+  </script>
+</body>
+</html>

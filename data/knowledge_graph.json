@@ -1,0 +1,400 @@
+﻿{
+    "nodes":  [
+                  {
+                      "id":  "vqe",
+                      "label":  "Variational Quantum Eigensolver (VQE)",
+                      "category":  "Algorithm",
+                      "color":  "#38bdf8",
+                      "size":  28,
+                      "details":  "Hybrid quantum-classical algorithm minimizing parameterized Hamiltonian expectation values.",
+                      "papers":  [
+                                     "doc-1789711369-386",
+                                     "doc-seed-1",
+                                     "doc-seed-2"
+                                 ],
+                      "frequency":  3
+                  },
+                  {
+                      "id":  "uccsd",
+                      "label":  "Unitary Coupled-Cluster (UCCSD)",
+                      "category":  "Method",
+                      "color":  "#818cf8",
+                      "size":  24,
+                      "details":  "Wave-function ansatz expansion incorporating single and double fermionic excitations.",
+                      "papers":  [
+                                     "doc-1789711369-386",
+                                     "doc-seed-1",
+                                     "doc-seed-2"
+                                 ],
+                      "frequency":  3
+                  },
+                  {
+                      "id":  "cobyla",
+                      "label":  "COBYLA Classical Optimizer",
+                      "category":  "Algorithm",
+                      "color":  "#38bdf8",
+                      "size":  20,
+                      "details":  "Derivative-free optimization by linear approximations for noisy NISQ parameter updates.",
+                      "papers":  [
+                                     "doc-seed-1",
+                                     "doc-seed-2"
+                                 ],
+                      "frequency":  2
+                  },
+                  {
+                      "id":  "jw_trans",
+                      "label":  "Jordan-Wigner Transformation",
+                      "category":  "Method",
+                      "color":  "#818cf8",
+                      "size":  22,
+                      "details":  "Isomorphic mapping of second-quantized fermionic operators onto Pauli spin matrices.",
+                      "papers":  [
+                                     "doc-seed-1",
+                                     "doc-seed-2"
+                                 ],
+                      "frequency":  2
+                  },
+                  {
+                      "id":  "active_space",
+                      "label":  "Active Space Truncation",
+                      "category":  "Method",
+                      "color":  "#818cf8",
+                      "size":  24,
+                      "details":  "Natural orbital occupancy selection isolating core orbitals around ligand binding sites.",
+                      "papers":  [
+                                     "doc-seed-1",
+                                     "doc-seed-3"
+                                 ],
+                      "frequency":  2
+                  },
+                  {
+                      "id":  "barren",
+                      "label":  "Barren Plateaus",
+                      "category":  "Challenge",
+                      "color":  "#fb923c",
+                      "size":  24,
+                      "details":  "Exponential vanishing of cost function partial derivative variance with qubit count.",
+                      "papers":  [
+                                     "doc-seed-1",
+                                     "doc-seed-2"
+                                 ],
+                      "frequency":  2
+                  },
+                  {
+                      "id":  "gate_noise",
+                      "label":  "Depolarizing Gate Noise",
+                      "category":  "Challenge",
+                      "color":  "#fb923c",
+                      "size":  22,
+                      "details":  "Physical two-qubit gate decoherence and infidelity on uncorrected NISQ processors.",
+                      "papers":  [
+                                     "doc-seed-1"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "qubit_overhead",
+                      "label":  "Qubit Redundancy Overhead",
+                      "category":  "Challenge",
+                      "color":  "#fb923c",
+                      "size":  20,
+                      "details":  "Massive physical-to-logical qubit ratio required to maintain high code distances.",
+                      "papers":  [
+                                     "doc-seed-1",
+                                     "doc-seed-3"
+                                 ],
+                      "frequency":  2
+                  },
+                  {
+                      "id":  "zne",
+                      "label":  "Zero-Noise Extrapolation (ZNE)",
+                      "category":  "Mitigation",
+                      "color":  "#e879f9",
+                      "size":  24,
+                      "details":  "Digital error mitigation using unitary folding and Richardson polynomial extrapolation.",
+                      "papers":  [
+                                     "doc-seed-1"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "sym_preservation",
+                      "label":  "Symmetry Preservation",
+                      "category":  "Mitigation",
+                      "color":  "#34d399",
+                      "size":  22,
+                      "details":  "Enforcing particle number [H, N]=0 and spin invariance [H, S^2]=0 to restrict search space.",
+                      "papers":  [
+                                     "doc-seed-1"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "kinase_pocket",
+                      "label":  "Kinase ATP-Binding Pocket",
+                      "category":  "Problem",
+                      "color":  "#facc15",
+                      "size":  24,
+                      "details":  "Target oncological receptor binding site mapped onto 8 physical active-space qubits.",
+                      "papers":  [
+                                     "doc-seed-1"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "res_chem_accuracy",
+                      "label":  "Chemical Accuracy (1.38 kcal/mol)",
+                      "category":  "Metric",
+                      "color":  "#a855f7",
+                      "size":  20,
+                      "details":  "Energy deviation within 1.5 kcal/mol threshold relative to Full Configuration Interaction.",
+                      "papers":  [
+                                     "doc-seed-1"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "local_obs",
+                      "label":  "Local Observable Decomposition",
+                      "category":  "Method",
+                      "color":  "#818cf8",
+                      "size":  26,
+                      "details":  "Decomposing global Hamiltonian into sums of 1-local and 2-local projector terms.",
+                      "papers":  [
+                                     "doc-seed-2"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "res_grad_poly",
+                      "label":  "Polynomial Gradient Scaling Omega(1/poly(n))",
+                      "category":  "Metric",
+                      "color":  "#a855f7",
+                      "size":  20,
+                      "details":  "Lower-bounded variance ensuring trainable gradients regardless of ansatz depth.",
+                      "papers":  [
+                                     "doc-seed-2"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "mwpm",
+                      "label":  "MWPM Blossom Decoder",
+                      "category":  "Algorithm",
+                      "color":  "#38bdf8",
+                      "size":  26,
+                      "details":  "Minimum-Weight Perfect Matching algorithm decoding defect syndromes in surface codes.",
+                      "papers":  [
+                                     "doc-seed-3"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "surface_code",
+                      "label":  "Planar Surface Code",
+                      "category":  "Mitigation",
+                      "color":  "#34d399",
+                      "size":  28,
+                      "details":  "Topological 2D lattice stabilizing logical qubits against arbitrary Pauli errors.",
+                      "papers":  [
+                                     "doc-seed-3"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "transmon",
+                      "label":  "Superconducting Transmon Qubits",
+                      "category":  "Hardware",
+                      "color":  "#f43f5e",
+                      "size":  22,
+                      "details":  "Non-linear Josephson junction circuit architecture operating at millikelvin temperatures.",
+                      "papers":  [
+                                     "doc-seed-3"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "fpga_coproc",
+                      "label":  "FPGA Co-Processor",
+                      "category":  "Hardware",
+                      "color":  "#f43f5e",
+                      "size":  22,
+                      "details":  "Ultra-low-latency reconfigurable hardware decoding surface code defect chains in real time.",
+                      "papers":  [
+                                     "doc-seed-3"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "spin_orbitals_32",
+                      "label":  "32 Molecular Spin-Orbitals",
+                      "category":  "Problem",
+                      "color":  "#facc15",
+                      "size":  22,
+                      "details":  "Full non-truncated electronic active space required for industrial drug discovery.",
+                      "papers":  [
+                                     "doc-seed-3"
+                                 ],
+                      "frequency":  1
+                  },
+                  {
+                      "id":  "res_decoding_latency",
+                      "label":  "850 ns Decoding Latency",
+                      "category":  "Metric",
+                      "color":  "#a855f7",
+                      "size":  20,
+                      "details":  "Real-time Blossom syndrome resolution within the 80 microsecond coherence horizon.",
+                      "papers":  [
+                                     "doc-seed-3"
+                                 ],
+                      "frequency":  1
+                  }
+              ],
+    "edges":  [
+                  {
+                      "id":  "rel-doc-1789711369-386-vqe-uccsd",
+                      "source":  "vqe",
+                      "target":  "uccsd",
+                      "relation":  "USES_ANSATZ",
+                      "category":  "Methodology",
+                      "docId":  "doc-1789711369-386",
+                      "docTitle":  "Quantum Natural Gradient Descent for Variational State Preparation",
+                      "evidence":  "Combined with symmetry-preserving unitary coupled-cluster (UCCSD) ansatze that maps binding pocket electronic structure.",
+                      "confidence":  0.98
+                  },
+                  {
+                      "id":  "rel-doc-seed-1-vqe-kinase",
+                      "source":  "vqe",
+                      "target":  "kinase_pocket",
+                      "relation":  "APPLIED_TO",
+                      "category":  "Application",
+                      "docId":  "doc-seed-1",
+                      "docTitle":  "Active Space VQE for Strongly Correlated Electronic Systems in Kinase Docking",
+                      "evidence":  "Maps the binding pocket electronic structure of tyrosine kinase inhibitors onto 8 physical qubits.",
+                      "confidence":  0.99
+                  },
+                  {
+                      "id":  "rel-doc-seed-1-vqe-chemacc",
+                      "source":  "vqe",
+                      "target":  "res_chem_accuracy",
+                      "relation":  "REPORTS_RESULT",
+                      "category":  "Empirical Result",
+                      "docId":  "doc-seed-1",
+                      "docTitle":  "Active Space VQE for Strongly Correlated Electronic Systems in Kinase Docking",
+                      "evidence":  "The resulting binding energy deviation was 1.38 kcal/mol relative to classical FCI, comfortably within the 1.5 kcal/mol chemical accuracy threshold.",
+                      "confidence":  0.99
+                  },
+                  {
+                      "id":  "rel-doc-seed-1-uccsd-jw",
+                      "source":  "jw_trans",
+                      "target":  "uccsd",
+                      "relation":  "MAPS_FERMIONS",
+                      "category":  "Transformation",
+                      "docId":  "doc-seed-1",
+                      "docTitle":  "Active Space VQE for Strongly Correlated Electronic Systems in Kinase Docking",
+                      "evidence":  "The second-quantized fermionic Hamiltonian is mapped to Pauli operators via Jordan-Wigner transformation.",
+                      "confidence":  0.97
+                  },
+                  {
+                      "id":  "rel-doc-seed-1-sym-barren",
+                      "source":  "sym_preservation",
+                      "target":  "barren",
+                      "relation":  "MITIGATES",
+                      "category":  "Mitigation",
+                      "docId":  "doc-seed-1",
+                      "docTitle":  "Active Space VQE for Strongly Correlated Electronic Systems in Kinase Docking",
+                      "evidence":  "Symmetry-preserving active space reduction successfully circumvents barren plateaus while keeping circuit depth below 42 two-qubit gates.",
+                      "confidence":  0.96
+                  },
+                  {
+                      "id":  "rel-doc-seed-1-vqe-zne",
+                      "source":  "vqe",
+                      "target":  "zne",
+                      "relation":  "ERROR_MITIGATED_BY",
+                      "category":  "Error Handling",
+                      "docId":  "doc-seed-1",
+                      "docTitle":  "Active Space VQE for Strongly Correlated Electronic Systems in Kinase Docking",
+                      "evidence":  "To counter depolarizing noise, we deploy digital zero-noise extrapolation (ZNE) via unitary folding and Richardson polynomials.",
+                      "confidence":  0.97
+                  },
+                  {
+                      "id":  "rel-doc-seed-2-local-barren",
+                      "source":  "local_obs",
+                      "target":  "barren",
+                      "relation":  "MITIGATES",
+                      "category":  "Theoretical Proof",
+                      "docId":  "doc-seed-2",
+                      "docTitle":  "Mitigating Cost Function Dependent Barren Plateaus in Parameterized Quantum Circuits",
+                      "evidence":  "Local cost functions maintain polynomially decaying gradients Omega(1/poly(n)) up to depths of O(poly(log n)), eliminating barren plateaus.",
+                      "confidence":  0.99
+                  },
+                  {
+                      "id":  "rel-doc-seed-2-local-polygrad",
+                      "source":  "local_obs",
+                      "target":  "res_grad_poly",
+                      "relation":  "REPORTS_RESULT",
+                      "category":  "Empirical Result",
+                      "docId":  "doc-seed-2",
+                      "docTitle":  "Mitigating Cost Function Dependent Barren Plateaus in Parameterized Quantum Circuits",
+                      "evidence":  "Gradient variance satisfies Var[dC_local/dtheta_k] \u003e= Omega(1/poly(n)), achieving 98.4% state fidelity within 140 iterations.",
+                      "confidence":  0.98
+                  },
+                  {
+                      "id":  "rel-doc-seed-3-surface-mwpm",
+                      "source":  "surface_code",
+                      "target":  "mwpm",
+                      "relation":  "REQUIRES_DECODER",
+                      "category":  "Architecture",
+                      "docId":  "doc-seed-3",
+                      "docTitle":  "Topological Quantum Error Correction and Fault-Tolerant Surface Codes",
+                      "evidence":  "We formulate minimum-weight perfect matching (MWPM) decoders to maintain logical error rates below 1e-12 per gate cycle.",
+                      "confidence":  0.99
+                  },
+                  {
+                      "id":  "rel-doc-seed-3-mwpm-fpga",
+                      "source":  "mwpm",
+                      "target":  "fpga_coproc",
+                      "relation":  "RUNS_ON",
+                      "category":  "Hardware Integration",
+                      "docId":  "doc-seed-3",
+                      "docTitle":  "Topological Quantum Error Correction and Fault-Tolerant Surface Codes",
+                      "evidence":  "We implement an accelerated Blossom-algorithm decoder running on FPGA co-processors.",
+                      "confidence":  0.98
+                  },
+                  {
+                      "id":  "rel-doc-seed-3-mwpm-latency",
+                      "source":  "mwpm",
+                      "target":  "res_decoding_latency",
+                      "relation":  "REPORTS_RESULT",
+                      "category":  "Empirical Result",
+                      "docId":  "doc-seed-3",
+                      "docTitle":  "Topological Quantum Error Correction and Fault-Tolerant Surface Codes",
+                      "evidence":  "FPGA co-processor resolves defect pairs in under 850 nanoseconds, comfortably within physical coherence time T_2* \u003e 80 microseconds.",
+                      "confidence":  0.99
+                  },
+                  {
+                      "id":  "rel-doc-seed-3-surface-overhead",
+                      "source":  "surface_code",
+                      "target":  "qubit_overhead",
+                      "relation":  "EXHIBITS_LIMITATION",
+                      "category":  "Hardware Requirement",
+                      "docId":  "doc-seed-3",
+                      "docTitle":  "Topological Quantum Error Correction and Fault-Tolerant Surface Codes",
+                      "evidence":  "Code distance d = 17 translates to 578 physical qubits per logical qubit for 32 molecular spin-orbitals.",
+                      "confidence":  0.97
+                  }
+              ],
+    "lastUpdated":  "2026-10-05 09:50:54",
+    "totalEntities":  20,
+    "totalRelationships":  12,
+    "connectedPapersCount":  4,
+    "categories":  [
+                       "Algorithm",
+                       "Method",
+                       "Challenge",
+                       "Mitigation",
+                       "Hardware",
+                       "Problem",
+                       "Metric"
+                   ]
+}
